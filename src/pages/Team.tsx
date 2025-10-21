@@ -109,7 +109,7 @@ const Team = () => {
                         />
                       </div>
                       <div className="absolute -bottom-2 -right-2 w-12 h-12 bg-gradient-gold rounded-full flex items-center justify-center shadow-gold">
-                        <span className="text-2xl">⭐</span>
+                        <Award className="w-6 h-6 text-gold-foreground" />
                       </div>
                     </div>
 
