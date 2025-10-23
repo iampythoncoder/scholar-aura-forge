@@ -1,56 +1,38 @@
-import { Linkedin, Mail, Award } from "lucide-react";
+import { } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
 const Team = () => {
   const teamMembers = [
     {
-      name: "Sarah Chen",
-      role: "Founder & President",
-      bio: "Passionate about creating opportunities for underserved students.",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop",
-      linkedin: "#",
-      email: "sarah@futurescholars.org",
+      name: "Aarush Kadira",
+      role: "Founder",
+      bio: "Visionary leader dedicated to empowering students and creating opportunities for the next generation of scholars.",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
     },
     {
-      name: "Marcus Johnson",
-      role: "Vice President",
-      bio: "Leading our mentorship programs and community outreach initiatives.",
-      image: "https://images.unsplash.com/photo-1556157382-97eda2f9e2bf?w=400&h=400&fit=crop",
-      linkedin: "#",
-      email: "marcus@futurescholars.org",
+      name: "Joshua Castelino",
+      role: "Secretary",
+      bio: "Organizational expert ensuring smooth operations and effective communication across all initiatives.",
+      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop",
     },
     {
-      name: "Priya Patel",
-      role: "Director of Programs",
-      bio: "Designing impactful events and workshops for our members.",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop",
-      linkedin: "#",
-      email: "priya@futurescholars.org",
+      name: "Saatvik Santosh",
+      role: "Public Affairs and Development Officer",
+      bio: "Designed this website and manages all technical infrastructure. Building digital solutions for community impact.",
+      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop",
     },
     {
-      name: "David Kim",
-      role: "Treasurer",
-      bio: "Managing finances and ensuring sustainable growth of our initiatives.",
+      name: "Kabir Baig",
+      role: "Design Manager",
+      bio: "Creative visionary crafting compelling visual experiences and brand identity for maximum engagement.",
+      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop",
+    },
+    {
+      name: "Ketav Karthikeyan",
+      role: "Community and Partnership Manager",
+      bio: "Building meaningful relationships and strategic partnerships to expand our reach and community impact.",
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop",
-      linkedin: "#",
-      email: "david@futurescholars.org",
-    },
-    {
-      name: "Elena Rodriguez",
-      role: "Communications Director",
-      bio: "Telling our story and connecting with our community through media.",
-      image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&h=400&fit=crop",
-      linkedin: "#",
-      email: "elena@futurescholars.org",
-    },
-    {
-      name: "James Wright",
-      role: "Partnerships Lead",
-      bio: "Building relationships with organizations to expand our impact.",
-      image: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=400&h=400&fit=crop",
-      linkedin: "#",
-      email: "james@futurescholars.org",
     },
   ];
 
@@ -84,130 +66,45 @@ const Team = () => {
         </div>
       </section>
 
-      {/* Team Grid - Staggered Layout */}
+      {/* Team Grid - Equal Size Cards */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-6">
-          {/* Leadership Row - Larger Cards */}
-          <div className="grid md:grid-cols-2 gap-12 mb-16">
-            {teamMembers.slice(0, 2).map((member, index) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {teamMembers.map((member, index) => (
               <Card
                 key={index}
-                className="group relative overflow-hidden hover:shadow-glow transition-all duration-500 border-2 hover:border-accent/50 animate-slide-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className="group relative overflow-hidden border-2 hover:border-accent/50 transition-all duration-300 hover:shadow-glow bg-card/80 backdrop-blur-sm"
               >
-                <div className="absolute inset-0 bg-gradient-accent opacity-0 group-hover:opacity-5 transition-opacity" />
-                
-                <div className="p-8">
-                  <div className="flex flex-col md:flex-row gap-6 items-start">
-                    {/* Profile Image */}
-                    <div className="relative shrink-0">
-                      <div className="w-32 h-32 rounded-2xl overflow-hidden border-4 border-accent/20 group-hover:border-accent/50 transition-all">
-                        <img
-                          src={member.image}
-                          alt={member.name}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                        />
-                      </div>
-                      <div className="absolute -bottom-2 -right-2 w-12 h-12 bg-gradient-gold rounded-full flex items-center justify-center shadow-gold">
-                        <Award className="w-6 h-6 text-gold-foreground" />
-                      </div>
-                    </div>
-
-                    {/* Info */}
-                    <div className="flex-1 space-y-4">
-                      <div>
-                        <h3 className="text-2xl font-bold mb-1 group-hover:text-accent transition-colors">
-                          {member.name}
-                        </h3>
-                        <p className="text-accent font-medium">{member.role}</p>
-                      </div>
-                      <p className="text-muted-foreground leading-relaxed">{member.bio}</p>
-                      <div className="flex gap-3 pt-2">
-                        <Button
-                          variant="outline"
-                          size="sm"
-                          className="hover:bg-accent hover:text-accent-foreground transition-colors"
-                          asChild
-                        >
-                          <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
-                            <Linkedin className="w-4 h-4 mr-2" />
-                            LinkedIn
-                          </a>
-                        </Button>
-                        <Button
-                          variant="outline"
-                          size="sm"
-                          className="hover:bg-gold hover:text-gold-foreground transition-colors"
-                          asChild
-                        >
-                          <a href={`mailto:${member.email}`}>
-                            <Mail className="w-4 h-4 mr-2" />
-                            Email
-                          </a>
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </div>
-
-          {/* Team Members Grid - Standard Cards */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {teamMembers.slice(2).map((member, index) => (
-              <Card
-                key={index}
-                className="group relative overflow-hidden hover:shadow-glow transition-all duration-500 border-2 hover:border-accent/50 animate-slide-up"
-                style={{ animationDelay: `${(index + 2) * 0.1}s` }}
-              >
-                <div className="absolute inset-0 bg-gradient-accent opacity-0 group-hover:opacity-5 transition-opacity" />
+                <div className="absolute inset-0 bg-gradient-accent opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
                 
                 <div className="p-6 space-y-4">
-                  {/* Profile Image */}
-                  <div className="relative mx-auto w-28 h-28">
-                    <div className="w-full h-full rounded-2xl overflow-hidden border-4 border-accent/20 group-hover:border-accent/50 transition-all">
+                  {/* Profile Image Container */}
+                  <div className="relative mx-auto w-32 h-32">
+                    {/* Decorative rings */}
+                    <div className="absolute inset-0 rounded-full border-4 border-accent/20 animate-pulse" />
+                    <div className="absolute inset-2 rounded-full border-2 border-accent/40" />
+                    
+                    {/* Profile Image */}
+                    <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-background shadow-elegant">
                       <img
                         src={member.image}
                         alt={member.name}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                       />
                     </div>
                   </div>
 
-                  {/* Info */}
+                  {/* Content */}
                   <div className="text-center space-y-2">
-                    <h3 className="text-xl font-bold group-hover:text-accent transition-colors">
+                    <h3 className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">
                       {member.name}
                     </h3>
-                    <p className="text-accent font-medium text-sm">{member.role}</p>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
+                    <p className="text-sm font-semibold text-accent uppercase tracking-wide">
+                      {member.role}
+                    </p>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
                       {member.bio}
                     </p>
-                  </div>
-
-                  {/* Social Links */}
-                  <div className="flex gap-2 justify-center pt-2">
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      className="hover:bg-accent/10 hover:text-accent"
-                      asChild
-                    >
-                      <a href={member.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                        <Linkedin className="w-4 h-4" />
-                      </a>
-                    </Button>
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      className="hover:bg-gold/10 hover:text-gold"
-                      asChild
-                    >
-                      <a href={`mailto:${member.email}`} aria-label="Email">
-                        <Mail className="w-4 h-4" />
-                      </a>
-                    </Button>
                   </div>
                 </div>
               </Card>

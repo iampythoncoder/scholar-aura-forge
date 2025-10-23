@@ -17,70 +17,37 @@ const Events = () => {
 
   const events = [
     {
-      title: "Leadership Excellence Workshop",
-      date: "January 15, 2024",
-      time: "2:00 PM - 5:00 PM",
-      location: "University Hall, Room 301",
-      type: "Workshop",
-      attendees: 45,
-      description: "Develop essential leadership skills through interactive exercises and real-world case studies.",
+      title: "TO BE DECIDED",
+      date: "TBD",
+      time: "TBD",
+      location: "TBD",
+      type: "Event",
+      attendees: 0,
+      description: "Event details coming soon. Stay tuned for updates on our upcoming initiatives and community activities.",
       status: "upcoming",
       color: "accent",
     },
     {
-      title: "Networking Mixer: Connect & Grow",
-      date: "January 22, 2024",
-      time: "6:00 PM - 8:30 PM",
-      location: "Innovation Center",
-      type: "Social",
-      attendees: 80,
-      description: "Meet fellow scholars, alumni, and industry professionals in a casual networking environment.",
+      title: "TO BE DECIDED",
+      date: "TBD",
+      time: "TBD",
+      location: "TBD",
+      type: "Event",
+      attendees: 0,
+      description: "Event details coming soon. Stay tuned for updates on our upcoming initiatives and community activities.",
       status: "upcoming",
       color: "gold",
     },
     {
-      title: "Career Development Panel",
-      date: "February 5, 2024",
-      time: "3:00 PM - 5:00 PM",
-      location: "Virtual Event",
-      type: "Panel",
-      attendees: 120,
-      description: "Hear from successful professionals about navigating your career path and making an impact.",
+      title: "TO BE DECIDED",
+      date: "TBD",
+      time: "TBD",
+      location: "TBD",
+      type: "Event",
+      attendees: 0,
+      description: "Event details coming soon. Stay tuned for updates on our upcoming initiatives and community activities.",
       status: "upcoming",
       color: "accent",
-    },
-    {
-      title: "Mentorship Program Launch",
-      date: "February 12, 2024",
-      time: "4:00 PM - 6:00 PM",
-      location: "Student Center",
-      type: "Program",
-      attendees: 60,
-      description: "Kick-off event for our new mentorship initiative connecting students with industry leaders.",
-      status: "upcoming",
-      color: "gold",
-    },
-    {
-      title: "Community Service Day",
-      date: "December 10, 2023",
-      time: "9:00 AM - 4:00 PM",
-      location: "Local Community Center",
-      type: "Service",
-      attendees: 95,
-      description: "Gave back to our community through various volunteer activities and outreach programs.",
-      status: "past",
-      color: "muted",
-    },
-    {
-      title: "Annual Scholarship Gala",
-      date: "November 18, 2023",
-      time: "7:00 PM - 11:00 PM",
-      location: "Grand Ballroom",
-      type: "Gala",
-      attendees: 200,
-      description: "Celebrated our achievements and raised funds for future scholarships.",
-      status: "past",
-      color: "muted",
     },
   ];
 
@@ -230,12 +197,14 @@ const Events = () => {
                             {event.type}
                           </span>
                         </div>
-                        <span className="flex items-center gap-2 text-sm text-muted-foreground font-medium">
-                          <Users className={`w-5 h-5 ${
-                            event.color === 'gold' ? 'text-gold' : 'text-accent'
-                          }`} />
-                          {event.attendees} attending
-                        </span>
+                        {event.attendees > 0 && (
+                          <span className="flex items-center gap-2 text-sm text-muted-foreground font-medium">
+                            <Users className={`w-5 h-5 ${
+                              event.color === 'gold' ? 'text-gold' : 'text-accent'
+                            }`} />
+                            {event.attendees} attending
+                          </span>
+                        )}
                       </div>
 
                       {/* Title */}
@@ -299,53 +268,6 @@ const Events = () => {
         </div>
       </section>
 
-      {/* Past Events - Simplified Cards */}
-      {pastEvents.length > 0 && (
-        <section className="py-24 bg-gradient-to-br from-primary/5 to-accent/5">
-          <div className="container mx-auto px-6">
-            <h2 className="text-4xl font-bold mb-16 text-center">
-              Past{" "}
-              <span className="bg-gradient-accent bg-clip-text text-transparent">
-                Events
-              </span>
-            </h2>
-
-            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-              {pastEvents.map((event, index) => (
-                <Card
-                  key={index}
-                  className="group relative overflow-hidden border-2 hover:border-muted-foreground/30 transition-all duration-500 opacity-60 hover:opacity-100"
-                >
-                  <div className="p-6 space-y-4">
-                    <div className="flex items-center justify-between">
-                      <span className="px-3 py-1 rounded-full bg-muted text-muted-foreground text-xs font-medium">
-                        {event.type}
-                      </span>
-                      <span className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <Users className="w-4 h-4" />
-                        {event.attendees} attended
-                      </span>
-                    </div>
-
-                    <h3 className="text-xl font-bold">{event.title}</h3>
-
-                    <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                      <div className="flex items-center gap-2">
-                        <Calendar className="w-4 h-4" />
-                        <span>{event.date}</span>
-                      </div>
-                    </div>
-
-                    <p className="text-muted-foreground text-sm leading-relaxed">
-                      {event.description}
-                    </p>
-                  </div>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
 
       {/* CTA Section */}
       <section className="py-32 relative overflow-hidden bg-gradient-primary">

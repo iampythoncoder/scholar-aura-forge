@@ -6,10 +6,10 @@ import TagCloud3D from "@/components/TagCloud3D";
 
 const Home = () => {
   const stats = [
-    { icon: Users, label: "Active Members", value: "500+" },
-    { icon: Award, label: "Scholarships Given", value: "$250K+" },
-    { icon: Calendar, label: "Events Hosted", value: "120+" },
-    { icon: Heart, label: "Lives Impacted", value: "1000+" },
+    { icon: Users, label: "Active Members", value: "20" },
+    { icon: Award, label: "Funds Raised", value: "$5K" },
+    { icon: Calendar, label: "Events Hosted", value: "3" },
+    { icon: Heart, label: "Lives Impacted", value: "200+" },
   ];
 
   const upcomingEvents = [
@@ -76,8 +76,7 @@ const Home = () => {
                 <Link to="/about">
                   <Button
                     size="lg"
-                    variant="outline"
-                    className="border-2 border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10"
+                    className="bg-white text-primary hover:bg-white/90 hover:shadow-elegant transition-all duration-300"
                   >
                     Learn More
                   </Button>
