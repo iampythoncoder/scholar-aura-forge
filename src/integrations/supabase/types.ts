@@ -14,7 +14,155 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      donations: {
+        Row: {
+          amount: number
+          created_at: string
+          donor_email: string | null
+          donor_id: string | null
+          donor_name: string | null
+          id: string
+          is_anonymous: boolean | null
+          message: string | null
+          project_id: string
+          stripe_payment_intent_id: string | null
+        }
+        Insert: {
+          amount: number
+          created_at?: string
+          donor_email?: string | null
+          donor_id?: string | null
+          donor_name?: string | null
+          id?: string
+          is_anonymous?: boolean | null
+          message?: string | null
+          project_id: string
+          stripe_payment_intent_id?: string | null
+        }
+        Update: {
+          amount?: number
+          created_at?: string
+          donor_email?: string | null
+          donor_id?: string | null
+          donor_name?: string | null
+          id?: string
+          is_anonymous?: boolean | null
+          message?: string | null
+          project_id?: string
+          stripe_payment_intent_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "donations_donor_id_fkey"
+            columns: ["donor_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "donations_project_id_fkey"
+            columns: ["project_id"]
+            isOneToOne: false
+            referencedRelation: "projects"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          bio: string | null
+          created_at: string
+          email: string
+          full_name: string
+          id: string
+          is_teacher: boolean | null
+          school_name: string | null
+          updated_at: string
+        }
+        Insert: {
+          avatar_url?: string | null
+          bio?: string | null
+          created_at?: string
+          email: string
+          full_name: string
+          id: string
+          is_teacher?: boolean | null
+          school_name?: string | null
+          updated_at?: string
+        }
+        Update: {
+          avatar_url?: string | null
+          bio?: string | null
+          created_at?: string
+          email?: string
+          full_name?: string
+          id?: string
+          is_teacher?: boolean | null
+          school_name?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      projects: {
+        Row: {
+          category: Database["public"]["Enums"]["project_category"]
+          created_at: string
+          creator_id: string
+          current_amount: number
+          deadline: string | null
+          description: string
+          goal_amount: number
+          id: string
+          image_url: string | null
+          school_name: string | null
+          status: Database["public"]["Enums"]["project_status"]
+          student_count: number | null
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          category: Database["public"]["Enums"]["project_category"]
+          created_at?: string
+          creator_id: string
+          current_amount?: number
+          deadline?: string | null
+          description: string
+          goal_amount: number
+          id?: string
+          image_url?: string | null
+          school_name?: string | null
+          status?: Database["public"]["Enums"]["project_status"]
+          student_count?: number | null
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          category?: Database["public"]["Enums"]["project_category"]
+          created_at?: string
+          creator_id?: string
+          current_amount?: number
+          deadline?: string | null
+          description?: string
+          goal_amount?: number
+          id?: string
+          image_url?: string | null
+          school_name?: string | null
+          status?: Database["public"]["Enums"]["project_status"]
+          student_count?: number | null
+          title?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "projects_creator_id_fkey"
+            columns: ["creator_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
@@ -23,7 +171,13 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      project_category:
+        | "education"
+        | "healthcare"
+        | "technology"
+        | "community"
+        | "other"
+      project_status: "pending" | "active" | "funded" | "completed" | "rejected"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +304,15 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      project_category: [
+        "education",
+        "healthcare",
+        "technology",
+        "community",
+        "other",
+      ],
+      project_status: ["pending", "active", "funded", "completed", "rejected"],
+    },
   },
 } as const
