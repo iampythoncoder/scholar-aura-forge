@@ -8,50 +8,49 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 220 35% 97%;
-    --foreground: 225 90% 8%;
+    --background: 0 0% 98%;
+    --foreground: 264 8% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 225 90% 8%;
+    --card-foreground: 264 8% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 225 90% 8%;
+    --popover-foreground: 264 8% 15%;
 
-    --primary: 225 75% 18%;
+    --primary: 264 89% 40%;
     --primary-foreground: 0 0% 98%;
 
-    --secondary: 220 20% 88%;
-    --secondary-foreground: 225 75% 18%;
+    --secondary: 48 100% 67%;
+    --secondary-foreground: 264 8% 15%;
 
-    --muted: 220 20% 92%;
-    --muted-foreground: 225 15% 45%;
+    --muted: 264 8% 95%;
+    --muted-foreground: 264 6% 45%;
 
-    --accent: 225 95% 55%;
+    --accent: 264 89% 40%;
     --accent-foreground: 0 0% 98%;
 
-    --gold: 45 80% 55%;
-    --gold-foreground: 225 90% 8%;
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 98%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 220 20% 88%;
-    --input: 220 20% 88%;
-    --ring: 225 95% 55%;
+    --border: 264 8% 90%;
+    --input: 264 8% 90%;
+    --ring: 264 89% 40%;
 
-    --radius: 1rem;
+    --radius: 0.5rem;
 
-    /* Custom design tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(225 75% 18%) 0%, hsl(225 95% 35%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(225 95% 55%) 0%, hsl(280 75% 55%) 100%);
-    --gradient-gold: linear-gradient(135deg, hsl(45 80% 55%) 0%, hsl(35 85% 65%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(225 85% 12%) 0%, hsl(225 75% 25%) 50%, hsl(225 95% 35%) 100%);
+    /* DonorsChoose-inspired design tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(264 89% 40%) 0%, hsl(264 89% 55%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(264 89% 40%) 0%, hsl(264 89% 50%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(48 100% 67%) 0%, hsl(38 100% 60%) 100%);
     
-    --shadow-elegant: 0 10px 40px -5px hsl(225 75% 18% / 0.15);
-    --shadow-glow: 0 0 30px hsl(225 95% 55% / 0.3);
-    --shadow-gold: 0 8px 25px hsl(45 80% 55% / 0.25);
+    --shadow-elegant: 0 4px 20px hsl(264 89% 40% / 0.1);
+    --shadow-glow: 0 0 40px hsl(264 89% 40% / 0.2);
+    --shadow-card: 0 2px 8px hsl(264 8% 15% / 0.08);
 
-    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 

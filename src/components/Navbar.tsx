@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { supabase } from "@/integrations/supabase/client";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,12 +17,28 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const [user, setUser] = useState<any>(null);
+
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setUser(session?.user ?? null);
+    });
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_, session) => {
+      setUser(session?.user ?? null);
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
+
+  const handleSignOut = async () => {
+    await supabase.auth.signOut();
+  };
+
   const navLinks = [
-    { name: "Home", path: "/" },
+    { name: "Find Projects", path: "/projects" },
     { name: "About", path: "/about" },
-    { name: "Team", path: "/team" },
-    { name: "Events", path: "/events" },
-    { name: "Assistance", path: "/assistance" },
+    { name: "How It Works", path: "/about" },
   ];
 
   return (
@@ -67,12 +84,29 @@ const Navbar = () => {
             ))}
           </div>
 
-          <div className="hidden md:block">
-            <Link to="/assistance">
-              <Button className="bg-gradient-accent text-accent-foreground hover:shadow-glow transition-all">
-                Join Us
-              </Button>
-            </Link>
+          <div className="hidden md:flex items-center gap-3">
+            {user ? (
+              <>
+                <Link to="/submit-project">
+                  <Button variant="outline" className="border-accent text-accent hover:bg-accent/10">
+                    Submit Project
+                  </Button>
+                </Link>
+                <Button 
+                  onClick={handleSignOut}
+                  variant="ghost"
+                  className="text-foreground hover:text-accent"
+                >
+                  Sign Out
+                </Button>
+              </>
+            ) : (
+              <Link to="/auth">
+                <Button className="bg-gradient-accent text-accent-foreground hover:shadow-glow transition-all">
+                  Sign In
+                </Button>
+              </Link>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -102,11 +136,28 @@ const Navbar = () => {
                 {link.name}
               </Link>
             ))}
-            <Link to="/assistance" onClick={() => setIsOpen(false)}>
-              <Button className="w-full bg-gradient-accent text-accent-foreground">
-                Join Us
-              </Button>
-            </Link>
+            {user ? (
+              <>
+                <Link to="/submit-project" onClick={() => setIsOpen(false)}>
+                  <Button variant="outline" className="w-full border-accent text-accent">
+                    Submit Project
+                  </Button>
+                </Link>
+                <Button 
+                  onClick={() => { handleSignOut(); setIsOpen(false); }}
+                  variant="ghost"
+                  className="w-full"
+                >
+                  Sign Out
+                </Button>
+              </>
+            ) : (
+              <Link to="/auth" onClick={() => setIsOpen(false)}>
+                <Button className="w-full bg-gradient-accent text-accent-foreground">
+                  Sign In
+                </Button>
+              </Link>
+            )}
           </div>
         )}
       </div>

@@ -7,9 +7,10 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Team from "./pages/Team";
-import Events from "./pages/Events";
-import Assistance from "./pages/Assistance";
+import Projects from "./pages/Projects";
+import ProjectDetail from "./pages/ProjectDetail";
+import SubmitProject from "./pages/SubmitProject";
+import Auth from "./pages/Auth";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,9 +27,10 @@ const App = () => (
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
-              <Route path="/team" element={<Team />} />
-              <Route path="/events" element={<Events />} />
-              <Route path="/assistance" element={<Assistance />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/projects/:id" element={<ProjectDetail />} />
+              <Route path="/submit-project" element={<SubmitProject />} />
+              <Route path="/auth" element={<Auth />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
