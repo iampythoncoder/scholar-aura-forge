@@ -108,11 +108,12 @@ export type Database = {
         Row: {
           category: Database["public"]["Enums"]["project_category"]
           created_at: string
-          creator_id: string
+          creator_id: string | null
           current_amount: number
           deadline: string | null
           description: string
           goal_amount: number
+          gofundme_link: string | null
           id: string
           image_url: string | null
           school_name: string | null
@@ -124,11 +125,12 @@ export type Database = {
         Insert: {
           category: Database["public"]["Enums"]["project_category"]
           created_at?: string
-          creator_id: string
+          creator_id?: string | null
           current_amount?: number
           deadline?: string | null
           description: string
           goal_amount: number
+          gofundme_link?: string | null
           id?: string
           image_url?: string | null
           school_name?: string | null
@@ -140,11 +142,12 @@ export type Database = {
         Update: {
           category?: Database["public"]["Enums"]["project_category"]
           created_at?: string
-          creator_id?: string
+          creator_id?: string | null
           current_amount?: number
           deadline?: string | null
           description?: string
           goal_amount?: number
+          gofundme_link?: string | null
           id?: string
           image_url?: string | null
           school_name?: string | null

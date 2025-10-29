@@ -21,6 +21,7 @@ interface Project {
   image_url: string | null;
   deadline: string | null;
   created_at: string;
+  gofundme_link: string | null;
 }
 
 const ProjectDetail = () => {
@@ -186,13 +187,27 @@ const ProjectDetail = () => {
                   </p>
                 </div>
 
-                <Button 
-                  className="w-full bg-gradient-primary hover:shadow-glow text-lg py-6"
-                  size="lg"
-                >
-                  <Heart className="h-5 w-5 mr-2" />
-                  Donate Now
-                </Button>
+                {project.gofundme_link ? (
+                  <Button 
+                    className="w-full bg-gradient-primary hover:shadow-glow text-lg py-6"
+                    size="lg"
+                    asChild
+                  >
+                    <a href={project.gofundme_link} target="_blank" rel="noopener noreferrer">
+                      <Heart className="h-5 w-5 mr-2" />
+                      Donate on GoFundMe
+                    </a>
+                  </Button>
+                ) : (
+                  <Button 
+                    className="w-full bg-gradient-primary hover:shadow-glow text-lg py-6"
+                    size="lg"
+                    disabled
+                  >
+                    <Heart className="h-5 w-5 mr-2" />
+                    No Donation Link
+                  </Button>
+                )}
 
                 <Button 
                   variant="outline" 
