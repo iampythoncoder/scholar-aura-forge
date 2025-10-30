@@ -37,62 +37,47 @@ const About = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="relative py-32 overflow-hidden bg-gradient-hero">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-accent/30 rounded-full blur-3xl animate-float" />
-          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-secondary/30 rounded-full blur-3xl animate-float" style={{ animationDelay: "2s" }} />
-        </div>
-        
-        {/* Glass morphism overlay */}
-        <div className="absolute inset-0 bg-gradient-glass backdrop-blur-[1px]" />
-        
+      <section className="relative py-32 overflow-hidden bg-gradient-to-br from-background via-card to-background">
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-5xl mx-auto text-center space-y-8 animate-fade-in">
-            <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/25 backdrop-blur-md text-white text-sm font-semibold border border-white/40 shadow-glass">
+            <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-semibold">
               <Sparkles className="w-4 h-4" />
               Our Story
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight drop-shadow-lg">
+            <h1 className="text-5xl md:text-7xl font-bold text-foreground leading-tight">
               Empowering Tomorrow's{" "}
-              <span className="relative inline-block">
-                <span className="bg-gradient-to-r from-white via-white to-gold bg-clip-text text-transparent">
-                  Leaders Today
-                </span>
-                <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-accent rounded-full blur-sm" />
+              <span className="bg-gradient-accent bg-clip-text text-transparent">
+                Leaders Today
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-white/95 leading-relaxed max-w-3xl mx-auto drop-shadow-md font-medium">
+            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
               We're a passionate community dedicated to breaking down barriers and creating opportunities for students to achieve their dreams.
             </p>
 
-            {/* Stats Grid with Glass Cards */}
+            {/* Stats Grid */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-12">
               <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-accent rounded-2xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity" />
-                <div className="relative p-6 rounded-2xl bg-white/15 backdrop-blur-md border border-white/30 shadow-glass hover:shadow-glow transition-all hover:-translate-y-1">
-                  <p className="text-4xl md:text-5xl font-bold text-white mb-2">$5K+</p>
-                  <p className="text-sm text-white/90 font-medium">Funds Raised</p>
+                <div className="p-6 rounded-2xl bg-card border border-border shadow-card hover:border-primary/50 transition-all hover:-translate-y-1">
+                  <p className="text-4xl md:text-5xl font-bold text-primary mb-2">$5K+</p>
+                  <p className="text-sm text-muted-foreground font-medium">Funds Raised</p>
                 </div>
               </div>
               <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-gold rounded-2xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity" />
-                <div className="relative p-6 rounded-2xl bg-white/15 backdrop-blur-md border border-white/30 shadow-glass hover:shadow-gold transition-all hover:-translate-y-1">
-                  <p className="text-4xl md:text-5xl font-bold text-white mb-2">20+</p>
-                  <p className="text-sm text-white/90 font-medium">Team Members</p>
+                <div className="p-6 rounded-2xl bg-card border border-border shadow-card hover:border-accent/50 transition-all hover:-translate-y-1">
+                  <p className="text-4xl md:text-5xl font-bold text-accent mb-2">20+</p>
+                  <p className="text-sm text-muted-foreground font-medium">Team Members</p>
                 </div>
               </div>
               <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-primary rounded-2xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity" />
-                <div className="relative p-6 rounded-2xl bg-white/15 backdrop-blur-md border border-white/30 shadow-glass hover:shadow-elegant transition-all hover:-translate-y-1">
-                  <p className="text-4xl md:text-5xl font-bold text-white mb-2">5+</p>
-                  <p className="text-sm text-white/90 font-medium">School Partners</p>
+                <div className="p-6 rounded-2xl bg-card border border-border shadow-card hover:border-gold/50 transition-all hover:-translate-y-1">
+                  <p className="text-4xl md:text-5xl font-bold text-gold mb-2">5+</p>
+                  <p className="text-sm text-muted-foreground font-medium">School Partners</p>
                 </div>
               </div>
               <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-accent rounded-2xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity" />
-                <div className="relative p-6 rounded-2xl bg-white/15 backdrop-blur-md border border-white/30 shadow-glass hover:shadow-glow transition-all hover:-translate-y-1">
-                  <p className="text-4xl md:text-5xl font-bold text-white mb-2">200+</p>
-                  <p className="text-sm text-white/90 font-medium">Lives Impacted</p>
+                <div className="p-6 rounded-2xl bg-card border border-border shadow-card hover:border-secondary/50 transition-all hover:-translate-y-1">
+                  <p className="text-4xl md:text-5xl font-bold text-secondary mb-2">200+</p>
+                  <p className="text-sm text-muted-foreground font-medium">Lives Impacted</p>
                 </div>
               </div>
             </div>
@@ -101,129 +86,41 @@ const About = () => {
       </section>
 
       {/* Story Section */}
-      <section className="py-24 bg-background relative overflow-hidden">
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="space-y-6 animate-slide-in-left">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium border border-primary/20">
-                  <BookOpen className="w-4 h-4" />
-                  Origin Story
-                </div>
-                <h2 className="text-4xl md:text-5xl font-bold">
-                  Founded on a Vision of{" "}
-                  <span className="bg-gradient-accent bg-clip-text text-transparent">
-                    Possibility
-                  </span>
-                </h2>
-                <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
-                  <p>
-                    Future Scholars Association was born from a simple yet powerful belief: every student deserves the opportunity to pursue their dreams, regardless of their financial circumstances.
-                  </p>
-                  <p>
-                    What started as a small group of passionate individuals has grown into a thriving community of scholars, mentors, and supporters. Together, we've created a platform where educational projects find the support they need to come to life.
-                  </p>
-                  <p>
-                    Through crowdfunding campaigns and community partnerships, we've helped bridge the gap between classroom needs and available resources, ensuring that innovative educational projects don't go unfunded.
-                  </p>
-                </div>
-                <Button size="lg" className="bg-gradient-primary hover:shadow-glow">
-                  <Heart className="w-5 h-5 mr-2" />
-                  Support a Project
-                </Button>
-              </div>
-
-              {/* Visual Card */}
-              <div className="relative animate-slide-in-right">
-                <Card className="p-8 border-2 border-primary/20 hover:border-accent/50 transition-all hover:shadow-glow">
-                  <div className="relative h-80 rounded-2xl overflow-hidden bg-gradient-to-br from-primary/10 via-accent/10 to-secondary/10 border-2 border-accent/20">
-                    <div className="absolute inset-0">
-                      <div className="absolute top-10 left-10 w-32 h-32 bg-primary/20 rounded-full blur-2xl animate-pulse" />
-                      <div className="absolute bottom-10 right-10 w-36 h-36 bg-accent/20 rounded-full blur-2xl animate-pulse" style={{ animationDelay: "700ms" }} />
-                      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-gold/20 rounded-full blur-2xl animate-pulse" style={{ animationDelay: "1400ms" }} />
-                    </div>
-                    
-                    <div className="absolute inset-0 grid grid-cols-3 gap-4 p-8">
-                      <div className="flex items-center justify-center">
-                        <Target className="w-12 h-12 text-primary animate-bounce" style={{ animationDelay: '0ms' }} />
-                      </div>
-                      <div className="flex items-center justify-center">
-                        <Lightbulb className="w-12 h-12 text-accent animate-bounce" style={{ animationDelay: '200ms' }} />
-                      </div>
-                      <div className="flex items-center justify-center">
-                        <Users className="w-12 h-12 text-gold animate-bounce" style={{ animationDelay: '400ms' }} />
-                      </div>
-                      <div className="flex items-center justify-center">
-                        <Rocket className="w-12 h-12 text-secondary animate-bounce" style={{ animationDelay: '600ms' }} />
-                      </div>
-                      <div className="flex items-center justify-center">
-                        <Heart className="w-14 h-14 text-accent font-bold animate-bounce" style={{ animationDelay: '800ms' }} />
-                      </div>
-                      <div className="flex items-center justify-center">
-                        <Globe className="w-12 h-12 text-primary animate-bounce" style={{ animationDelay: '1000ms' }} />
-                      </div>
-                    </div>
-                  </div>
-                </Card>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Timeline Section */}
-      <section className="py-24 bg-gradient-to-br from-primary/5 via-accent/5 to-secondary/5">
+      <section className="py-24 bg-card/50">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Our{" "}
-              <span className="bg-gradient-accent bg-clip-text text-transparent">
-                Journey
-              </span>
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Key milestones that shaped our organization
-            </p>
-          </div>
-
-          <div className="max-w-5xl mx-auto relative">
-            {/* Timeline Line */}
-            <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-primary transform -translate-x-1/2" />
-
-            <div className="space-y-12">
-              {milestones.map((milestone, index) => (
-                <div
-                  key={index}
-                  className={`relative flex flex-col md:flex-row gap-8 items-center animate-slide-up`}
-                  style={{ animationDelay: `${index * 0.2}s` }}
-                >
-                  {/* Year Badge */}
-                  <div className={`md:flex-1 ${index % 2 === 0 ? 'md:text-right' : 'md:order-2'}`}>
-                    <div className="inline-block px-6 py-3 rounded-full bg-gradient-accent text-accent-foreground text-2xl font-bold shadow-glow">
-                      {milestone.year}
-                    </div>
-                  </div>
-
-                  {/* Timeline Dot */}
-                  <div className="hidden md:flex w-12 h-12 bg-gradient-primary rounded-full border-4 border-background shadow-elegant items-center justify-center z-10">
-                    <Star className="w-5 h-5 text-white" />
-                  </div>
-
-                  {/* Content Card */}
-                  <Card className={`md:flex-1 p-6 border-2 hover:border-accent/50 transition-all hover:shadow-glow group ${index % 2 === 1 ? 'md:order-2' : ''}`}>
-                    <h3 className="text-2xl font-bold mb-2 group-hover:text-accent transition-colors">
-                      {milestone.title}
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {milestone.description}
-                    </p>
-                  </Card>
-                </div>
-              ))}
+          <div className="max-w-4xl mx-auto">
+            <div className="space-y-8">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 text-accent text-sm font-medium">
+                <BookOpen className="w-4 h-4" />
+                How We Started
+              </div>
+              
+              <div className="space-y-6 text-lg text-foreground leading-relaxed">
+                <p className="text-2xl font-semibold text-foreground">
+                  It all started in a cramped dorm room with three college students who were tired of seeing talented peers drop out because they couldn't afford textbooks.
+                </p>
+                
+                <p>
+                  We didn't have some grand master plan. We just knew something had to change. So we pooled together what little money we had, created a basic website, and started asking people if they'd help fund a few student projects. To our surprise, people actually cared.
+                </p>
+                
+                <p>
+                  Fast forward a few years, and we've gone from helping 3 students buy textbooks to supporting hundreds of educational initiatives. We've had students launch tutoring programs, build computer labs in under-resourced schools, and even start their own scholarship funds.
+                </p>
+                
+                <p>
+                  The truth is, we're not a big organization with fancy offices or a huge staff. We're a group of passionate people who believe education shouldn't be a luxury. Every dollar raised, every project funded, every student helped—it's real people making a real difference.
+                </p>
+                
+                <p className="text-xl font-medium text-primary pt-4">
+                  We're just getting started, and we'd love for you to be part of this journey.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
+
 
       {/* Interactive Tag Cloud */}
       <section className="py-24 px-4 bg-background">
@@ -287,37 +184,29 @@ const About = () => {
       </section>
 
       {/* Mission CTA */}
-      <section className="py-32 relative overflow-hidden bg-gradient-hero">
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -top-32 -right-32 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-float" />
-          <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-gold/20 rounded-full blur-3xl animate-float" style={{ animationDelay: "2s" }} />
-        </div>
-        
-        {/* Glass morphism overlay */}
-        <div className="absolute inset-0 bg-gradient-glass backdrop-blur-[1px]" />
-        
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
-            <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-white/25 backdrop-blur-md text-white text-sm font-semibold border border-white/40 shadow-glass">
+      <section className="py-32 bg-gradient-to-br from-primary/10 to-accent/10">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto text-center space-y-8">
+            <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-gold/10 border border-gold/20 text-gold text-sm font-semibold">
               <Target className="w-4 h-4" />
               Our Mission
             </div>
             
-            <h2 className="text-4xl md:text-6xl font-bold text-white leading-tight drop-shadow-lg">
-              Together, We're Building a Brighter Future for Education
+            <h2 className="text-4xl md:text-6xl font-bold text-foreground leading-tight">
+              Let's Build Something Better, Together
             </h2>
 
-            <p className="text-xl text-white/95 leading-relaxed max-w-3xl mx-auto drop-shadow-md font-medium">
-              Join us in supporting classroom projects and making quality education accessible to every student. Every contribution creates ripples of positive change.
+            <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+              Every student has potential. Sometimes they just need a little help unlocking it. Join us in making education accessible to everyone, one project at a time.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
-              <Button size="lg" className="bg-white text-primary hover:bg-white/90 hover:shadow-glow hover:scale-105 transition-all">
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground hover:shadow-elegant hover:scale-105 transition-all">
                 <Heart className="w-5 h-5 mr-2" />
-                Support Projects
+                Support a Project
               </Button>
-              <Button size="lg" variant="outline" className="border-2 border-white/40 text-white hover:bg-white/15 backdrop-blur-md hover:scale-105 transition-all">
-                Learn More
+              <Button size="lg" variant="outline" className="border-2 border-border hover:bg-muted hover:scale-105 transition-all">
+                See Our Impact
               </Button>
             </div>
           </div>
