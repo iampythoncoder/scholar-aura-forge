@@ -67,8 +67,8 @@ const Navbar = () => {
 
           <div className="hidden md:flex items-center gap-3">
             <Link to="/submit-project">
-              <Button className="bg-gradient-accent text-accent-foreground hover:shadow-glow transition-all">
-                Submit Project
+              <Button className="bg-gradient-accent text-accent-foreground hover:shadow-glow hover:scale-105 transition-all">
+                Start a Campaign
               </Button>
             </Link>
           </div>
@@ -102,7 +102,7 @@ const Navbar = () => {
             ))}
             <Link to="/submit-project" onClick={() => setIsOpen(false)}>
               <Button className="w-full bg-gradient-accent text-accent-foreground">
-                Submit Project
+                Start a Campaign
               </Button>
             </Link>
           </div>

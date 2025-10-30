@@ -37,46 +37,63 @@ const About = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="relative py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-hero" />
+      <section className="relative py-32 overflow-hidden bg-gradient-hero">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-accent/30 rounded-full blur-3xl animate-float" />
           <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-secondary/30 rounded-full blur-3xl animate-float" style={{ animationDelay: "2s" }} />
         </div>
         
+        {/* Glass morphism overlay */}
+        <div className="absolute inset-0 bg-gradient-glass backdrop-blur-[1px]" />
+        
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-5xl mx-auto text-center space-y-8 animate-fade-in">
-            <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium border-2 border-white/30">
+            <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/25 backdrop-blur-md text-white text-sm font-semibold border border-white/40 shadow-glass">
               <Sparkles className="w-4 h-4" />
               Our Story
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground leading-tight">
+            <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight drop-shadow-lg">
               Empowering Tomorrow's{" "}
-              <span className="bg-gradient-to-r from-accent to-gold bg-clip-text text-transparent">
-                Leaders Today
+              <span className="relative inline-block">
+                <span className="bg-gradient-to-r from-white via-white to-gold bg-clip-text text-transparent">
+                  Leaders Today
+                </span>
+                <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-accent rounded-full blur-sm" />
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-white/95 leading-relaxed max-w-3xl mx-auto drop-shadow-md font-medium">
               We're a passionate community dedicated to breaking down barriers and creating opportunities for students to achieve their dreams.
             </p>
 
-            {/* Stats Grid */}
+            {/* Stats Grid with Glass Cards */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-12">
-              <div className="relative p-6 rounded-2xl bg-white/10 backdrop-blur-md border-2 border-white/20">
-                <p className="text-4xl md:text-5xl font-bold text-accent mb-2">$5K+</p>
-                <p className="text-sm text-primary-foreground/80">Funds Raised</p>
+              <div className="relative group">
+                <div className="absolute inset-0 bg-gradient-accent rounded-2xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity" />
+                <div className="relative p-6 rounded-2xl bg-white/15 backdrop-blur-md border border-white/30 shadow-glass hover:shadow-glow transition-all hover:-translate-y-1">
+                  <p className="text-4xl md:text-5xl font-bold text-white mb-2">$5K+</p>
+                  <p className="text-sm text-white/90 font-medium">Funds Raised</p>
+                </div>
               </div>
-              <div className="relative p-6 rounded-2xl bg-white/10 backdrop-blur-md border-2 border-white/20">
-                <p className="text-4xl md:text-5xl font-bold text-gold mb-2">20+</p>
-                <p className="text-sm text-primary-foreground/80">Team Members</p>
+              <div className="relative group">
+                <div className="absolute inset-0 bg-gradient-gold rounded-2xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity" />
+                <div className="relative p-6 rounded-2xl bg-white/15 backdrop-blur-md border border-white/30 shadow-glass hover:shadow-gold transition-all hover:-translate-y-1">
+                  <p className="text-4xl md:text-5xl font-bold text-white mb-2">20+</p>
+                  <p className="text-sm text-white/90 font-medium">Team Members</p>
+                </div>
               </div>
-              <div className="relative p-6 rounded-2xl bg-white/10 backdrop-blur-md border-2 border-white/20">
-                <p className="text-4xl md:text-5xl font-bold text-secondary mb-2">5+</p>
-                <p className="text-sm text-primary-foreground/80">School Partners</p>
+              <div className="relative group">
+                <div className="absolute inset-0 bg-gradient-primary rounded-2xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity" />
+                <div className="relative p-6 rounded-2xl bg-white/15 backdrop-blur-md border border-white/30 shadow-glass hover:shadow-elegant transition-all hover:-translate-y-1">
+                  <p className="text-4xl md:text-5xl font-bold text-white mb-2">5+</p>
+                  <p className="text-sm text-white/90 font-medium">School Partners</p>
+                </div>
               </div>
-              <div className="relative p-6 rounded-2xl bg-white/10 backdrop-blur-md border-2 border-white/20">
-                <p className="text-4xl md:text-5xl font-bold text-accent mb-2">200+</p>
-                <p className="text-sm text-primary-foreground/80">Lives Impacted</p>
+              <div className="relative group">
+                <div className="absolute inset-0 bg-gradient-accent rounded-2xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity" />
+                <div className="relative p-6 rounded-2xl bg-white/15 backdrop-blur-md border border-white/30 shadow-glass hover:shadow-glow transition-all hover:-translate-y-1">
+                  <p className="text-4xl md:text-5xl font-bold text-white mb-2">200+</p>
+                  <p className="text-sm text-white/90 font-medium">Lives Impacted</p>
+                </div>
               </div>
             </div>
           </div>
@@ -276,27 +293,30 @@ const About = () => {
           <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-gold/20 rounded-full blur-3xl animate-float" style={{ animationDelay: "2s" }} />
         </div>
         
+        {/* Glass morphism overlay */}
+        <div className="absolute inset-0 bg-gradient-glass backdrop-blur-[1px]" />
+        
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
-            <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium border-2 border-white/30">
+            <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-white/25 backdrop-blur-md text-white text-sm font-semibold border border-white/40 shadow-glass">
               <Target className="w-4 h-4" />
               Our Mission
             </div>
             
-            <h2 className="text-4xl md:text-6xl font-bold text-primary-foreground leading-tight">
+            <h2 className="text-4xl md:text-6xl font-bold text-white leading-tight drop-shadow-lg">
               Together, We're Building a Brighter Future for Education
             </h2>
 
-            <p className="text-xl text-primary-foreground/90 leading-relaxed max-w-3xl mx-auto">
+            <p className="text-xl text-white/95 leading-relaxed max-w-3xl mx-auto drop-shadow-md font-medium">
               Join us in supporting classroom projects and making quality education accessible to every student. Every contribution creates ripples of positive change.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
-              <Button size="lg" className="bg-white text-primary hover:bg-white/90 hover:shadow-glow">
+              <Button size="lg" className="bg-white text-primary hover:bg-white/90 hover:shadow-glow hover:scale-105 transition-all">
                 <Heart className="w-5 h-5 mr-2" />
                 Support Projects
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+              <Button size="lg" variant="outline" className="border-2 border-white/40 text-white hover:bg-white/15 backdrop-blur-md hover:scale-105 transition-all">
                 Learn More
               </Button>
             </div>
