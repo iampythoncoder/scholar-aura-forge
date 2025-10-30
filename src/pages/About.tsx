@@ -1,7 +1,6 @@
 import { Award, Target, Heart, Users, Rocket, BookOpen, Globe, Lightbulb, TrendingUp, Star, Sparkles } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import TagCloud3D from "@/components/TagCloud3D";
 
 const About = () => {
   const values = [
@@ -122,26 +121,6 @@ const About = () => {
       </section>
 
 
-      {/* Interactive Tag Cloud */}
-      <section className="py-24 px-4 bg-background">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12 space-y-4">
-            <h2 className="text-4xl md:text-5xl font-bold">
-              What We{" "}
-              <span className="bg-gradient-gold bg-clip-text text-transparent">
-                Stand For
-              </span>
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Explore our core values and principles
-            </p>
-          </div>
-          
-          <div className="h-[500px] flex items-center justify-center">
-            <TagCloud3D />
-          </div>
-        </div>
-      </section>
 
       {/* Values Grid */}
       <section className="py-24 bg-gradient-to-br from-accent/5 to-primary/5">
