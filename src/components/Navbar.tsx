@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Sparkles } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Navbar = () => {
@@ -17,6 +17,7 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
+    { name: "Home", path: "/" },
     { name: "Find Projects", path: "/projects" },
     { name: "About", path: "/about" },
     { name: "Team", path: "/team" },
@@ -24,10 +25,10 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-card/90 backdrop-blur-xl shadow-elegant"
-          : "bg-transparent"
+          ? "bg-white/95 backdrop-blur-sm shadow-md border-b border-border"
+          : "bg-white/80 backdrop-blur-sm"
       }`}
     >
       <div className="container mx-auto px-6 py-4">
@@ -36,11 +37,7 @@ const Navbar = () => {
             to="/"
             className="flex items-center gap-2 group"
           >
-            <div className="relative">
-              <Sparkles className="w-8 h-8 text-accent transition-transform group-hover:scale-110 group-hover:rotate-12" />
-              <div className="absolute inset-0 bg-accent/20 rounded-full blur-xl group-hover:bg-accent/30 transition-all" />
-            </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <span className="text-2xl font-bold text-primary hover:text-primary/80 transition-colors">
               Future Scholars
             </span>
           </Link>
@@ -51,15 +48,15 @@ const Navbar = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`relative text-sm font-medium transition-colors hover:text-accent ${
+                className={`relative text-sm font-medium transition-colors hover:text-primary ${
                   location.pathname === link.path
-                    ? "text-accent"
+                    ? "text-primary"
                     : "text-foreground"
                 }`}
               >
                 {link.name}
                 {location.pathname === link.path && (
-                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-accent rounded-full" />
+                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full" />
                 )}
               </Link>
             ))}
@@ -67,7 +64,7 @@ const Navbar = () => {
 
           <div className="hidden md:flex items-center gap-3">
             <Link to="/submit-project">
-              <Button className="bg-gradient-accent text-accent-foreground hover:shadow-glow hover:scale-105 transition-all">
+              <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
                 Start a Campaign
               </Button>
             </Link>
@@ -76,7 +73,7 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-foreground hover:text-accent transition-colors"
+            className="md:hidden text-foreground hover:text-primary transition-colors"
             aria-label="Toggle menu"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -85,7 +82,7 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden mt-4 pb-4 space-y-3 animate-slide-up">
+          <div className="md:hidden mt-4 pb-4 space-y-3 animate-fade-in">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -93,7 +90,7 @@ const Navbar = () => {
                 onClick={() => setIsOpen(false)}
                 className={`block py-2 px-4 rounded-lg transition-colors ${
                   location.pathname === link.path
-                    ? "bg-accent/10 text-accent"
+                    ? "bg-primary/10 text-primary"
                     : "hover:bg-muted"
                 }`}
               >
@@ -101,7 +98,7 @@ const Navbar = () => {
               </Link>
             ))}
             <Link to="/submit-project" onClick={() => setIsOpen(false)}>
-              <Button className="w-full bg-gradient-accent text-accent-foreground">
+              <Button className="w-full bg-primary text-primary-foreground">
                 Start a Campaign
               </Button>
             </Link>
