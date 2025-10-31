@@ -69,29 +69,29 @@ const Home = () => {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center bg-white p-8 rounded-lg shadow-sm">
+            <div className="text-center bg-white p-8 rounded-lg shadow-md border border-border">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4">
                 <BookOpen className="h-8 w-8 text-primary" />
               </div>
               <div className="text-4xl font-bold text-primary mb-2">10,283</div>
-              <p className="text-foreground font-medium">Projects Funded</p>
-              <p className="text-sm text-muted-foreground mt-2">Since 2020</p>
+              <p className="text-foreground font-semibold text-lg">Projects Funded</p>
+              <p className="text-sm text-foreground/70 mt-2">Since 2020</p>
             </div>
-            <div className="text-center bg-white p-8 rounded-lg shadow-sm">
+            <div className="text-center bg-white p-8 rounded-lg shadow-md border border-border">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4">
                 <Users className="h-8 w-8 text-primary" />
               </div>
               <div className="text-4xl font-bold text-primary mb-2">52,847</div>
-              <p className="text-foreground font-medium">Students Helped</p>
-              <p className="text-sm text-muted-foreground mt-2">Across 48 states</p>
+              <p className="text-foreground font-semibold text-lg">Students Helped</p>
+              <p className="text-sm text-foreground/70 mt-2">Across 48 states</p>
             </div>
-            <div className="text-center bg-white p-8 rounded-lg shadow-sm">
+            <div className="text-center bg-white p-8 rounded-lg shadow-md border border-border">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4">
                 <Heart className="h-8 w-8 text-primary" />
               </div>
               <div className="text-4xl font-bold text-primary mb-2">$5.2M</div>
-              <p className="text-foreground font-medium">Total Donated</p>
-              <p className="text-sm text-muted-foreground mt-2">By people like you</p>
+              <p className="text-foreground font-semibold text-lg">Total Donated</p>
+              <p className="text-sm text-foreground/70 mt-2">By people like you</p>
             </div>
           </div>
         </div>
@@ -101,44 +101,44 @@ const Home = () => {
       <section className="py-20">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Three simple steps</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Three simple steps</h2>
+            <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
               Supporting a classroom project is easy and rewarding
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="text-center hover:shadow-lg transition-all duration-300 border-2">
+            <Card className="text-center hover:shadow-lg transition-all duration-300 border-2 bg-white">
               <CardHeader>
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4 mx-auto">
                   <Search className="h-8 w-8 text-primary" />
                 </div>
-                <CardTitle className="text-xl">1. Find a project</CardTitle>
-                <CardDescription className="text-base">
+                <CardTitle className="text-xl text-foreground">1. Find a project</CardTitle>
+                <CardDescription className="text-base text-foreground/70">
                   Browse projects from real teachers in schools across the country. Filter by subject, location, or urgency.
                 </CardDescription>
               </CardHeader>
             </Card>
 
-            <Card className="text-center hover:shadow-lg transition-all duration-300 border-2">
+            <Card className="text-center hover:shadow-lg transition-all duration-300 border-2 bg-white">
               <CardHeader>
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4 mx-auto">
                   <Heart className="h-8 w-8 text-primary" />
                 </div>
-                <CardTitle className="text-xl">2. Make a donation</CardTitle>
-                <CardDescription className="text-base">
+                <CardTitle className="text-xl text-foreground">2. Make a donation</CardTitle>
+                <CardDescription className="text-base text-foreground/70">
                   Every dollar counts. Choose an amount that works for you, from $5 to fully funding a project.
                 </CardDescription>
               </CardHeader>
             </Card>
 
-            <Card className="text-center hover:shadow-lg transition-all duration-300 border-2">
+            <Card className="text-center hover:shadow-lg transition-all duration-300 border-2 bg-white">
               <CardHeader>
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4 mx-auto">
                   <TrendingUp className="h-8 w-8 text-primary" />
                 </div>
-                <CardTitle className="text-xl">3. See the impact</CardTitle>
-                <CardDescription className="text-base">
+                <CardTitle className="text-xl text-foreground">3. See the impact</CardTitle>
+                <CardDescription className="text-base text-foreground/70">
                   Teachers send thank-you notes and photos showing how your support made a real difference.
                 </CardDescription>
               </CardHeader>
@@ -152,11 +152,11 @@ const Home = () => {
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-between mb-12">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-2">Projects that need you</h2>
-              <p className="text-muted-foreground">These classrooms are almost there - your donation could make all the difference</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-2">Projects that need you</h2>
+              <p className="text-foreground/70">These classrooms are almost there - your donation could make all the difference</p>
             </div>
             <Link to="/projects">
-              <Button variant="outline" className="border-2">
+              <Button variant="outline" className="border-2 border-primary text-primary hover:bg-primary/10">
                 View All
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
@@ -165,38 +165,23 @@ const Home = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { title: "Books for Beginning Readers", school: "Lincoln Elementary", progress: 78 },
-              { title: "STEM Lab Equipment", school: "Washington Middle School", progress: 65 },
-              { title: "Art Supplies for All", school: "Roosevelt High School", progress: 82 }
+              { title: "Books for Beginning Readers", school: "Lincoln Elementary" },
+              { title: "STEM Lab Equipment", school: "Washington Middle School" },
+              { title: "Art Supplies for All", school: "Roosevelt High School" }
             ].map((project, i) => (
-              <Card key={i} className="hover:shadow-lg transition-all duration-300 border-2">
-                <div className="aspect-video w-full bg-gradient-to-br from-primary to-primary/70 rounded-t-lg flex items-center justify-center text-white">
-                  <div className="text-center">
-                    <div className="text-5xl font-bold mb-2">{project.progress}%</div>
-                    <div className="text-sm">Funded</div>
-                  </div>
-                </div>
+              <Card key={i} className="hover:shadow-lg transition-all duration-300 border-2 bg-white">
+                <div className="aspect-video w-full bg-gradient-to-br from-primary to-primary/70 rounded-t-lg" />
                 <CardHeader>
-                  <CardTitle className="line-clamp-2">{project.title}</CardTitle>
-                  <CardDescription>{project.school}</CardDescription>
+                  <CardTitle className="line-clamp-2 text-foreground">{project.title}</CardTitle>
+                  <CardDescription className="text-foreground/70">{project.school}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="mb-4">
-                    <div className="flex justify-between text-sm mb-2">
-                      <span className="text-muted-foreground">Progress</span>
-                      <span className="font-medium">${(project.progress * 5).toFixed(0)} of $500</span>
-                    </div>
-                    <div className="h-2 bg-muted rounded-full overflow-hidden">
-                      <div 
-                        className="h-full bg-primary transition-all"
-                        style={{ width: `${project.progress}%` }}
-                      />
-                    </div>
-                  </div>
-                  <Button className="w-full bg-primary text-white hover:bg-primary/90">
-                    <Heart className="h-4 w-4 mr-2" />
-                    Support This Project
-                  </Button>
+                  <a href="https://gofundme.com" target="_blank" rel="noopener noreferrer" className="block">
+                    <Button className="w-full bg-primary text-white hover:bg-primary/90">
+                      <Heart className="h-4 w-4 mr-2" />
+                      Support This Project
+                    </Button>
+                  </a>
                 </CardContent>
               </Card>
             ))}

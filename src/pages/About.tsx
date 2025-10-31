@@ -49,34 +49,34 @@ const About = () => {
                 Leaders Today
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-foreground/70 leading-relaxed max-w-3xl mx-auto">
               We're a passionate community dedicated to breaking down barriers and creating opportunities for students to achieve their dreams.
             </p>
 
             {/* Stats Grid */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-12">
               <div className="relative group">
-                <div className="p-6 rounded-2xl bg-card border border-border shadow-card hover:border-primary/50 transition-all hover:-translate-y-1">
+                <div className="p-6 rounded-2xl bg-white border border-border shadow-md hover:border-primary/50 transition-all hover:-translate-y-1">
                   <p className="text-4xl md:text-5xl font-bold text-primary mb-2">$5K+</p>
-                  <p className="text-sm text-muted-foreground font-medium">Funds Raised</p>
+                  <p className="text-sm text-foreground/70 font-medium">Funds Raised</p>
                 </div>
               </div>
               <div className="relative group">
-                <div className="p-6 rounded-2xl bg-card border border-border shadow-card hover:border-accent/50 transition-all hover:-translate-y-1">
-                  <p className="text-4xl md:text-5xl font-bold text-accent mb-2">20+</p>
-                  <p className="text-sm text-muted-foreground font-medium">Team Members</p>
+                <div className="p-6 rounded-2xl bg-white border border-border shadow-md hover:border-primary/50 transition-all hover:-translate-y-1">
+                  <p className="text-4xl md:text-5xl font-bold text-primary mb-2">20+</p>
+                  <p className="text-sm text-foreground/70 font-medium">Team Members</p>
                 </div>
               </div>
               <div className="relative group">
-                <div className="p-6 rounded-2xl bg-card border border-border shadow-card hover:border-gold/50 transition-all hover:-translate-y-1">
-                  <p className="text-4xl md:text-5xl font-bold text-gold mb-2">5+</p>
-                  <p className="text-sm text-muted-foreground font-medium">School Partners</p>
+                <div className="p-6 rounded-2xl bg-white border border-border shadow-md hover:border-primary/50 transition-all hover:-translate-y-1">
+                  <p className="text-4xl md:text-5xl font-bold text-primary mb-2">5+</p>
+                  <p className="text-sm text-foreground/70 font-medium">School Partners</p>
                 </div>
               </div>
               <div className="relative group">
-                <div className="p-6 rounded-2xl bg-card border border-border shadow-card hover:border-secondary/50 transition-all hover:-translate-y-1">
-                  <p className="text-4xl md:text-5xl font-bold text-secondary mb-2">200+</p>
-                  <p className="text-sm text-muted-foreground font-medium">Lives Impacted</p>
+                <div className="p-6 rounded-2xl bg-white border border-border shadow-md hover:border-primary/50 transition-all hover:-translate-y-1">
+                  <p className="text-4xl md:text-5xl font-bold text-primary mb-2">200+</p>
+                  <p className="text-sm text-foreground/70 font-medium">Lives Impacted</p>
                 </div>
               </div>
             </div>
@@ -85,11 +85,11 @@ const About = () => {
       </section>
 
       {/* Story Section */}
-      <section className="py-24 bg-card/50">
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             <div className="space-y-8">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 text-accent text-sm font-medium">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium">
                 <BookOpen className="w-4 h-4" />
                 How We Started
               </div>
@@ -132,7 +132,7 @@ const About = () => {
                 Core Values
               </span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
               The principles that guide everything we do
             </p>
           </div>
@@ -141,19 +141,18 @@ const About = () => {
             {values.map((value, index) => (
               <Card
                 key={index}
-                className="p-8 border-2 hover:border-accent/50 transition-all hover:shadow-glow hover:-translate-y-2 group animate-slide-up"
+                className="p-8 border-2 hover:border-primary/50 transition-all hover:shadow-lg hover:-translate-y-1 group bg-white"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="relative mb-6">
                   <div className="relative inline-block">
-                    <value.icon className="w-12 h-12 text-accent group-hover:scale-110 group-hover:rotate-12 transition-all" />
-                    <div className="absolute inset-0 bg-accent/20 rounded-full blur-lg group-hover:bg-accent/40 transition-all" />
+                    <value.icon className="w-12 h-12 text-primary group-hover:scale-110 transition-all" />
                   </div>
                 </div>
-                <h3 className="text-2xl font-bold mb-3 group-hover:text-accent transition-colors">
+                <h3 className="text-2xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors">
                   {value.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-foreground/70 leading-relaxed">
                   {value.description}
                 </p>
               </Card>
@@ -163,10 +162,10 @@ const About = () => {
       </section>
 
       {/* Mission CTA */}
-      <section className="py-32 bg-gradient-to-br from-primary/10 to-accent/10">
+      <section className="py-32 bg-muted">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center space-y-8">
-            <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-gold/10 border border-gold/20 text-gold text-sm font-semibold">
+            <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-semibold">
               <Target className="w-4 h-4" />
               Our Mission
             </div>
@@ -175,16 +174,16 @@ const About = () => {
               Let's Build Something Better, Together
             </h2>
 
-            <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+            <p className="text-xl text-foreground/70 leading-relaxed max-w-3xl mx-auto">
               Every student has potential. Sometimes they just need a little help unlocking it. Join us in making education accessible to everyone, one project at a time.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground hover:shadow-elegant hover:scale-105 transition-all">
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white hover:scale-105 transition-all">
                 <Heart className="w-5 h-5 mr-2" />
                 Support a Project
               </Button>
-              <Button size="lg" variant="outline" className="border-2 border-border hover:bg-muted hover:scale-105 transition-all">
+              <Button size="lg" variant="outline" className="border-2 border-border hover:bg-white hover:scale-105 transition-all">
                 See Our Impact
               </Button>
             </div>

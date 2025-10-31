@@ -79,21 +79,19 @@ const Projects = () => {
   return (
     <div className="min-h-screen bg-background pt-20 pb-16">
       {/* Hero Section with Luxury Design */}
-      <section className="relative bg-gradient-hero text-foreground py-20 overflow-hidden border-b border-border">
-        <div className="absolute inset-0 bg-gradient-glass" />
-        
+      <section className="relative bg-white text-foreground py-20 overflow-hidden border-b border-border">
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-6">
-            <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-primary/10 border border-primary/30 text-primary text-sm font-semibold backdrop-blur-sm">
+            <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-primary/10 border border-primary/30 text-primary text-sm font-semibold">
               <Sparkles className="w-4 h-4" />
               Discover Opportunities
             </div>
             
-            <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-luxury bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-6xl font-bold mb-4 text-foreground">
               Find Your Perfect Project
             </h1>
             
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-foreground/70 max-w-3xl mx-auto leading-relaxed">
               Browse inspiring classroom projects from passionate teachers and students. Every contribution makes a real difference in education.
             </p>
 
@@ -101,15 +99,15 @@ const Projects = () => {
             <div className="grid grid-cols-3 gap-6 pt-8 max-w-2xl mx-auto">
               <div className="text-center">
                 <div className="text-3xl font-bold text-primary mb-1">{projects.length}</div>
-                <div className="text-sm text-muted-foreground">Active Projects</div>
+                <div className="text-sm text-foreground/70">Active Projects</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-accent mb-1">95%</div>
-                <div className="text-sm text-muted-foreground">Funded</div>
+                <div className="text-3xl font-bold text-primary mb-1">95%</div>
+                <div className="text-sm text-foreground/70">Funded</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-gold mb-1">$2.5M</div>
-                <div className="text-sm text-muted-foreground">Raised</div>
+                <div className="text-3xl font-bold text-primary mb-1">$2.5M</div>
+                <div className="text-sm text-foreground/70">Raised</div>
               </div>
             </div>
           </div>
@@ -118,21 +116,20 @@ const Projects = () => {
 
       <div className="container mx-auto px-6 -mt-8 relative z-20">
         {/* Enhanced Search and Filter Card */}
-        <Card className="shadow-luxury border-2 border-primary/20 mb-12 overflow-hidden">
-          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-luxury" />
+        <Card className="shadow-lg border-2 border-border mb-12 overflow-hidden bg-white">
           <CardContent className="pt-8 pb-6">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
               <div className="md:col-span-3 relative">
-                <Search className="absolute left-3 top-3.5 h-5 w-5 text-muted-foreground" />
+                <Search className="absolute left-3 top-3.5 h-5 w-5 text-foreground/50" />
                 <Input
                   placeholder="Search by keywords, school name, or subject area..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-10 h-12 text-base border-border/50 focus:border-primary"
+                  className="pl-10 h-12 text-base border-border focus:border-primary"
                 />
               </div>
               <Select value={filterCategory} onValueChange={setFilterCategory}>
-                <SelectTrigger className="h-12 border-border/50 focus:border-primary">
+                <SelectTrigger className="h-12 border-border focus:border-primary">
                   <Filter className="h-4 w-4 mr-2" />
                   <SelectValue placeholder="Category" />
                 </SelectTrigger>
@@ -154,11 +151,11 @@ const Projects = () => {
                 <Award className="w-3 h-3 mr-1" />
                 Urgent
               </Badge>
-              <Badge variant="outline" className="cursor-pointer hover:bg-accent/10 hover:border-accent transition-colors">
+              <Badge variant="outline" className="cursor-pointer hover:bg-primary/10 hover:border-primary transition-colors">
                 <TrendingUp className="w-3 h-3 mr-1" />
                 Almost Funded
               </Badge>
-              <Badge variant="outline" className="cursor-pointer hover:bg-gold/10 hover:border-gold transition-colors">
+              <Badge variant="outline" className="cursor-pointer hover:bg-primary/10 hover:border-primary transition-colors">
                 <Clock className="w-3 h-3 mr-1" />
                 New This Week
               </Badge>
@@ -195,22 +192,22 @@ const Projects = () => {
         {isLoading ? (
           <div className="text-center py-20">
             <div className="inline-block w-16 h-16 border-4 border-primary/30 border-t-primary rounded-full animate-spin mb-4" />
-            <p className="text-muted-foreground text-lg">Loading amazing projects...</p>
+            <p className="text-foreground/70 text-lg">Loading amazing projects...</p>
           </div>
         ) : filteredProjects.length === 0 ? (
-          <Card className="shadow-card border-2 border-dashed border-border">
+          <Card className="shadow-md border-2 border-dashed border-border bg-white">
             <CardContent className="py-20 text-center">
               <div className="w-20 h-20 mx-auto mb-6 bg-primary/10 rounded-full flex items-center justify-center">
                 <BookOpen className="h-10 w-10 text-primary" />
               </div>
               <h3 className="text-2xl font-bold mb-2 text-foreground">No Projects Found</h3>
-              <p className="text-muted-foreground mb-8 text-lg max-w-md mx-auto">
+              <p className="text-foreground/70 mb-8 text-lg max-w-md mx-auto">
                 We couldn't find any projects matching your criteria. Try adjusting your search or filters.
               </p>
               <Button 
                 size="lg"
                 onClick={() => { setSearchTerm(""); setFilterCategory("all"); }}
-                className="bg-gradient-primary hover:shadow-elegant"
+                className="bg-primary text-white hover:bg-primary/90"
               >
                 Clear All Filters
               </Button>
@@ -219,97 +216,68 @@ const Projects = () => {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProjects.map((project) => (
-              <Link key={project.id} to={`/projects/${project.id}`}>
-                <Card className="h-full group hover:shadow-luxury transition-all duration-500 hover:-translate-y-2 border-2 border-transparent hover:border-primary/30 overflow-hidden bg-card">
-                  {/* Image Section */}
-                  {project.image_url ? (
-                    <div className="aspect-video w-full overflow-hidden relative">
-                      <img
-                        src={project.image_url}
-                        alt={project.title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                    </div>
-                  ) : (
-                    <div className="aspect-video w-full bg-gradient-to-br from-primary/20 via-accent/20 to-secondary/20 flex items-center justify-center">
-                      <BookOpen className="h-16 w-16 text-primary/40" />
+              <Card key={project.id} className="h-full group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-2 bg-white">
+                {/* Image Section */}
+                {project.image_url ? (
+                  <div className="aspect-video w-full overflow-hidden relative">
+                    <img
+                      src={project.image_url}
+                      alt={project.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                ) : (
+                  <div className="aspect-video w-full bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center">
+                    <BookOpen className="h-16 w-16 text-primary/40" />
+                  </div>
+                )}
+                
+                <CardHeader className="space-y-3">
+                  {/* Category Badge */}
+                  <div className="flex items-center gap-2">
+                    <Badge variant="secondary" className="text-xs font-medium">
+                      {getCategoryIcon(project.category)} {project.category}
+                    </Badge>
+                  </div>
+                  
+                  <CardTitle className="line-clamp-2 text-foreground group-hover:text-primary transition-colors text-xl">
+                    {project.title}
+                  </CardTitle>
+                  
+                  {project.school_name && (
+                    <div className="flex items-center gap-2 text-sm text-foreground/70">
+                      <MapPin className="h-4 w-4" />
+                      <span className="line-clamp-1">{project.school_name}</span>
                     </div>
                   )}
+                </CardHeader>
+                
+                <CardContent className="space-y-4">
+                  <p className="text-sm text-foreground/70 line-clamp-3 leading-relaxed">
+                    {project.description}
+                  </p>
                   
-                  <CardHeader className="space-y-3">
-                    {/* Category Badge */}
-                    <div className="flex items-center gap-2">
-                      <Badge variant="secondary" className="text-xs font-medium">
-                        {getCategoryIcon(project.category)} {project.category}
-                      </Badge>
-                      {Math.random() > 0.5 && (
-                        <Badge className="bg-accent/10 text-accent border-accent/30 text-xs">
-                          <TrendingUp className="w-3 h-3 mr-1" />
-                          Urgent
-                        </Badge>
-                      )}
+                  {project.student_count && (
+                    <div className="flex items-center gap-2 text-sm font-medium text-primary">
+                      <Users className="h-4 w-4" />
+                      <span>Impacting {project.student_count} students</span>
                     </div>
-                    
-                    <CardTitle className="line-clamp-2 group-hover:text-primary transition-colors text-xl">
-                      {project.title}
-                    </CardTitle>
-                    
-                    {project.school_name && (
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <MapPin className="h-4 w-4" />
-                        <span className="line-clamp-1">{project.school_name}</span>
-                      </div>
-                    )}
-                  </CardHeader>
-                  
-                  <CardContent className="space-y-4">
-                    <p className="text-sm text-muted-foreground line-clamp-3 leading-relaxed">
-                      {project.description}
-                    </p>
-                    
-                    {project.student_count && (
-                      <div className="flex items-center gap-2 text-sm font-medium text-accent">
-                        <Users className="h-4 w-4" />
-                        <span>Impacting {project.student_count} students</span>
-                      </div>
-                    )}
+                  )}
 
-                    {/* Progress Section */}
-                    <div className="space-y-3 pt-2">
-                      <div className="flex justify-between items-baseline">
-                        <span className="text-2xl font-bold text-primary">
-                          ${project.current_amount.toLocaleString()}
-                        </span>
-                        <span className="text-sm text-muted-foreground">
-                          of ${project.goal_amount.toLocaleString()} goal
-                        </span>
-                      </div>
-                      
-                      <div className="relative">
-                        <Progress 
-                          value={getProgressPercentage(project.current_amount, project.goal_amount)} 
-                          className="h-3"
-                        />
-                        <div className="absolute inset-0 bg-gradient-luxury opacity-20 rounded-full" />
-                      </div>
-                      
-                      <div className="flex items-center justify-between text-xs text-muted-foreground">
-                        <span>{Math.round(getProgressPercentage(project.current_amount, project.goal_amount))}% funded</span>
-                        <span className="flex items-center gap-1">
-                          <Clock className="h-3 w-3" />
-                          {Math.floor(Math.random() * 30 + 1)} days left
-                        </span>
-                      </div>
+                  <div className="pt-2">
+                    <div className="text-2xl font-bold text-primary mb-4">
+                      ${project.goal_amount.toLocaleString()} needed
                     </div>
+                  </div>
 
-                    <Button className="w-full bg-gradient-primary hover:shadow-glow group-hover:scale-105 transition-all mt-2">
+                  <a href="https://gofundme.com" target="_blank" rel="noopener noreferrer" className="block">
+                    <Button className="w-full bg-primary text-white hover:bg-primary/90">
                       <Heart className="h-4 w-4 mr-2" />
                       Support This Project
                     </Button>
-                  </CardContent>
-                </Card>
-              </Link>
+                  </a>
+                </CardContent>
+              </Card>
             ))}
           </div>
         )}
