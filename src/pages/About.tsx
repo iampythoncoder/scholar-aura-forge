@@ -30,7 +30,7 @@ const About = () => {
     { year: "2020", title: "Foundation", description: "Future Scholars Association was founded with a vision to make education accessible to all" },
     { year: "2021", title: "First Campaign", description: "Launched our first fundraising campaign, raising $2,000 for student scholarships" },
     { year: "2022", title: "Community Growth", description: "Expanded to 20 active members and partnered with 5 local schools" },
-    { year: "2023", title: "Major Impact", description: "Reached $5,000 in total funds raised, impacting over 200 students' lives" },
+    { year: "2023", title: "Major Impact", description: "Reached $15,000 in total funds raised, impacting over 1500 students' lives" },
   ];
 
   return (
@@ -75,7 +75,7 @@ const About = () => {
               </div>
               <div className="relative group">
                 <div className="p-6 rounded-2xl bg-white border border-border shadow-md hover:border-primary/50 transition-all hover:-translate-y-1">
-                  <p className="text-4xl md:text-5xl font-bold text-primary mb-2">200+</p>
+                  <p className="text-4xl md:text-5xl font-bold text-primary mb-2">1500+</p>
                   <p className="text-sm text-foreground/70 font-medium">Lives Impacted</p>
                 </div>
               </div>
@@ -86,39 +86,39 @@ const About = () => {
 
       {/* Story Section */}
       <section className="py-24 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
-            <div className="space-y-8">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium">
-                <BookOpen className="w-4 h-4" />
-                How We Started
-              </div>
-              
-              <div className="space-y-6 text-lg text-foreground leading-relaxed">
-                <p className="text-2xl font-semibold text-foreground">
-                  It all started in a cramped dorm room with three college students who were tired of seeing talented peers drop out because they couldn't afford textbooks.
-                </p>
-                
-                <p>
-                  We didn't have some grand master plan. We just knew something had to change. So we pooled together what little money we had, created a basic website, and started asking people if they'd help fund a few student projects. To our surprise, people actually cared.
-                </p>
-                
-                <p>
-                  Fast forward a few years, and we've gone from helping 3 students buy textbooks to supporting hundreds of educational initiatives. We've had students launch tutoring programs, build computer labs in under-resourced schools, and even start their own scholarship funds.
-                </p>
-                
-                <p>
-                  The truth is, we're not a big organization with fancy offices or a huge staff. We're a group of passionate people who believe education shouldn't be a luxury. Every dollar raised, every project funded, every student helped—it's real people making a real difference.
-                </p>
-                
-                <p className="text-xl font-medium text-primary pt-4">
-                  We're just getting started, and we'd love for you to be part of this journey.
-                </p>
-              </div>
-            </div>
-          </div>
+  <div className="container mx-auto px-6">
+    <div className="max-w-4xl mx-auto">
+      <div className="space-y-8">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium">
+          <BookOpen className="w-4 h-4" />
+          How We Started
         </div>
-      </section>
+
+        <div className="space-y-6 text-lg text-foreground leading-relaxed">
+          <p className="text-2xl font-semibold text-foreground">
+            It all started with a few students who were tired of seeing their friends struggle to chase their dreams because they didn’t have the right support.
+          </p>
+
+          <p>
+            We didn’t have a big plan or a lot of money. We just knew we wanted to help. So we built a small website and started connecting students who needed help with people who wanted to give it. To our surprise, people showed up.
+          </p>
+
+          <p>
+            Now, the <span className="font-semibold text-primary">Future Scholars Association</span> has grown into a community that’s helping students all over. We’ve helped fund tutoring programs, give out resources, and create opportunities for students to learn and succeed.
+          </p>
+
+          <p>
+            We’re not a big company or a fancy nonprofit — we’re just students and volunteers who believe that everyone deserves a chance to reach their goals.
+          </p>
+
+          <p className="text-xl font-medium text-primary pt-4">
+            We’re still growing, and we’d love for you to be part of this journey.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 
@@ -167,7 +167,7 @@ const About = () => {
           <div className="max-w-4xl mx-auto text-center space-y-8">
             <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-semibold">
               <Target className="w-4 h-4" />
-              Our Mission
+              
             </div>
             
             <h2 className="text-4xl md:text-6xl font-bold text-foreground leading-tight">

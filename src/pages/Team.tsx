@@ -54,7 +54,7 @@ const Team = () => {
             </div>
             <h1 className="text-5xl md:text-6xl font-bold text-primary-foreground">
               Meet the{" "}
-              <span className="bg-gradient-gold bg-clip-text text-transparent">
+              <span className="text-5xl md:text-6xl font-bold text-primary-foreground">
                 Dreamers & Doers
               </span>
             </h1>

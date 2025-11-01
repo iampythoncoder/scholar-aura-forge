@@ -29,7 +29,7 @@ const Home = () => {
                 </Button>
               </Link>
               <Link to="/submit-project">
-                <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white/10 text-lg px-8 py-6">
+                <Button size="lg" variant="outline" className="bg-white text-primary hover:bg-white/90 text-lg px-8 py-6">
                   I'm a teacher
                 </Button>
               </Link>
@@ -73,23 +73,23 @@ const Home = () => {
               <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4">
                 <BookOpen className="h-8 w-8 text-primary" />
               </div>
-              <div className="text-4xl font-bold text-primary mb-2">10,283</div>
+              <div className="text-4xl font-bold text-primary mb-2">3</div>
               <p className="text-foreground font-semibold text-lg">Projects Funded</p>
-              <p className="text-sm text-foreground/70 mt-2">Since 2020</p>
+              <p className="text-sm text-foreground/70 mt-2">Since founded</p>
             </div>
             <div className="text-center bg-white p-8 rounded-lg shadow-md border border-border">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4">
                 <Users className="h-8 w-8 text-primary" />
               </div>
-              <div className="text-4xl font-bold text-primary mb-2">52,847</div>
+              <div className="text-4xl font-bold text-primary mb-2">1500+</div>
               <p className="text-foreground font-semibold text-lg">Students Helped</p>
-              <p className="text-sm text-foreground/70 mt-2">Across 48 states</p>
+              <p className="text-sm text-foreground/70 mt-2">Across 2 states</p>
             </div>
             <div className="text-center bg-white p-8 rounded-lg shadow-md border border-border">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4">
                 <Heart className="h-8 w-8 text-primary" />
               </div>
-              <div className="text-4xl font-bold text-primary mb-2">$5.2M</div>
+              <div className="text-4xl font-bold text-primary mb-2">$15000+</div>
               <p className="text-foreground font-semibold text-lg">Total Donated</p>
               <p className="text-sm text-foreground/70 mt-2">By people like you</p>
             </div>
